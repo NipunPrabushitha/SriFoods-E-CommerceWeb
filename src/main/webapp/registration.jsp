@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body, html {
@@ -14,7 +14,7 @@
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* A gradient background */
             height: 100vh;
         }
-        .login-card {
+        .register-card {
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -38,10 +38,18 @@
 </nav>
 
 <div class="bg-cover d-flex justify-content-center align-items-center">
-    <div class="card login-card p-5 bg-white" style="max-width: 500px;">
+    <div class="card register-card p-5 bg-white" style="max-width: 600px;">
         <h2 class="text-center mb-4">Black & White</h2>
-        <h4 class="text-center mb-4">Login</h4>
-        <form action="loginServlet" method="post">
+        <h4 class="text-center mb-4">Register</h4>
+        <form action="registerServlet" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name" required>
+                <label for="fullname">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                <label for="email">Email Address</label>
+            </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                 <label for="username">Username</label>
@@ -50,10 +58,13 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                 <label for="password">Password</label>
             </div>
-            <button type="submit" class="btn btn-dark w-100">Login</button>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Register</button>
         </form>
-        <p class="text-center mt-3"> <a href="forgetPassword.jsp">Forget Password?</a></p>
-        <p class="text-center mt-3">Don't have an account? <a href="registration.jsp">Register here</a></p>
+        <p class="text-center mt-3">Already have an account? <a href="login.jsp">Login here</a></p>
     </div>
 </div>
 
