@@ -100,7 +100,7 @@
     <div class="form-section">
         <h4 class="text-center">Create Your Account</h4>
         <p class="text-center text-muted mb-4">Join us today and start your journey</p>
-        <form action="register" method="POST">
+        <form action="loginDataSave-servlet" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
