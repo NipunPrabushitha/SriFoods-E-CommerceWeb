@@ -3,57 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Core Clothing - Get Started</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
     <style>
         body, html {
-            height: 100%;
             margin: 0;
-        }
-        .bg-cover {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* A gradient background */
-            height: 100vh;
-        }
-        .login-card {
-            border-radius: 15px;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+        }
+
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            border-radius: 8px;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            border: none;
+            display: inline-flex;
+            align-items: center; /* Aligns the icon and text */
+        }
+
+        .btn-primary i {
+            margin-left: 0.8rem; /* Adds space between the text and icon */
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4e4376, #2b5876);
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">Core Clothing</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <button class="btn btn-outline-dark me-2" onclick="window.location.href='login.jsp'">Login</button>
-            <button class="btn btn-dark" onclick="window.location.href='register.jsp'">Sign In</button>
-        </div>
-    </div>
-</nav>
+<!-- Background Video -->
+<video autoplay muted loop class="video-background">
+    <source src="videos/videoplayback.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
-<div class="bg-cover d-flex justify-content-center align-items-center">
-    <div class="card login-card p-5 bg-white" style="max-width: 500px;">
-        <h2 class="text-center mb-4">Black & White</h2>
-        <h4 class="text-center mb-4">Login</h4>
-        <form action="loginServlet" method="post">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
-                <label for="username">Username</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                <label for="password">Password</label>
-            </div>
-            <button type="submit" class="btn btn-dark w-100">Login</button>
-        </form>
-        <p class="text-center mt-3"> <a href="forgetPassword.jsp">Forget Password?</a></p>
-        <p class="text-center mt-3">Don't have an account? <a href="registration.jsp">Register here</a></p>
+<!-- Overlay Content -->
+<div class="overlay">
+    <!-- Header Section -->
+    <div class="header-content">
+        <h1>Welcome to Core Clothing</h1>
+        <p>Discover the finest apparel designed for every moment.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-content">
+        <a href="login.jsp" class="btn btn-primary">
+            SHOP NOW
+            <i class="fas fa-arrow-right"></i> <!-- Font Awesome Arrow Icon -->
+        </a>
     </div>
 </div>
 
