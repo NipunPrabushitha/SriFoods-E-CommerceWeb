@@ -10,4 +10,6 @@ public interface CategoryDAO extends SuperDAO {
     boolean save(Category map);
 
     List<Category> getAll();
+
+    boolean update(Category map);
 }

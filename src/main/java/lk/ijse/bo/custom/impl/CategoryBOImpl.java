@@ -43,4 +43,9 @@ public class CategoryBOImpl implements CategoryBO {
         // Return the list of CategoryDTOs
         return categoryDTOList;
     }
+
+    @Override
+    public boolean updateCategory(CategoryDTO categoryDTO) {
+        return categoryDAO.update(new Category(categoryDTO.getId(), categoryDTO.getCategoryName(),categoryDTO.getDescription(), categoryDTO.getFilepath()));
+    }
 }

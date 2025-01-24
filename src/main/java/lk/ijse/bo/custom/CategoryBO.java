@@ -9,4 +9,6 @@ public interface CategoryBO extends SuperBO {
     boolean saveCategory(CategoryDTO categoryDTO);
 
     List<CategoryDTO> getAllCategories();
+
+    boolean updateCategory(CategoryDTO categoryDTO);
 }

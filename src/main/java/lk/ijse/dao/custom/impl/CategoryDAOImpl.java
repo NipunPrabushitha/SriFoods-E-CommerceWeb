@@ -55,4 +55,14 @@ public class CategoryDAOImpl implements CategoryDAO {
 
             return categories;
     }
+
+    @Override
+    public boolean update(Category map) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(map);
+        transaction.commit();
+        session.close();
+        return true;
+    }
 }

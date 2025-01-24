@@ -124,8 +124,9 @@
                     <img src="<%= categoryDTO.getFilepath() %>" alt="<%= categoryDTO.getFilepath() %>" style="width: 100px; height: auto;">
                 </td>
                 <td>
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    <button class="btn btn-warning btn-sm" onclick="editCategory('<%= categoryDTO.getId() %>', '<%= categoryDTO.getCategoryName() %>', '<%= categoryDTO.getDescription() %>', '<%= categoryDTO.getFilepath() %>')">Edit</button>
+                    <a href="deleteCategory-servlet?id=<%= categoryDTO.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
+
                 </td>
             </tr>
             <%
@@ -146,18 +147,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="container m-2">
-                <form>
+                <form action="UpdateCategoryServlet" method="post">
                     <div class="mb-3">
                         <label for="updated_category_id" class="form-label">Category ID</label>
-                        <input type="text" class="form-control" id="updated_category_id" readonly>
+                        <input type="text" class="form-control" id="updated_category_id" name="category_id" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="updated_category_name" class="form-label">Category Name</label>
-                        <input type="text" class="form-control" id="updated_category_name">
+                        <input type="text" class="form-control" id="updated_category_name" name="category_name">
                     </div>
                     <div class="mb-3">
                         <label for="updated_category_description" class="form-label">Description</label>
-                        <textarea class="form-control" id="updated_category_description" rows="3"></textarea>
+                        <textarea class="form-control" id="updated_category_description" name="category_description" rows="3"></textarea>
+                    </div>
+                    <!-- Preview Selected Image -->
+                    <div class="mb-3">
+                        <label class="form-label">Image Preview</label>
+                        <div>
+                            <img id="updated_image_preview" src="#" alt="Selected Image" style="max-width: 100%; max-height: 200px; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                        </div>
+                    </div>
+                    <!-- Image Link Field -->
+                    <div class="mb-3">
+                        <label for="updated_image_link" class="form-label">Image Link</label>
+                        <input type="text" class="form-control" id="updated_image_link" name="image_link" readonly>
                     </div>
                     <button id="btn_update_category" type="submit" class="btn btn-primary">Update</button>
                 </form>
@@ -165,6 +178,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Include Bootstrap JS, jQuery, and SweetAlert -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -212,7 +227,7 @@
     });
 
     // Function to populate modal with category data and show modal
-    const editCategory = (id, name, description) => {
+    /*const editCategory = (id, name, description) => {
         // Setting the modal input values dynamically
         $('#updated_category_id').val(id);
         $('#updated_category_name').val(name);
@@ -220,7 +235,30 @@
 
         // Showing the modal
         $('#updateCategoryModal').modal('show');
-    }
+    }*/
+
+    const editCategory = (id, name, description, filepath) => {
+        // Populate the modal fields
+        $('#updated_category_id').val(id);
+        $('#updated_category_name').val(name);
+        $('#updated_category_description').val(description);
+
+        // Update the preview image
+        const preview = $('#updated_image_preview');
+        if (filepath) {
+            preview.attr('src', filepath); // Set the `src` to the image's file path
+            preview.css('display', 'block'); // Show the preview
+            $('#updated_image_link').val(filepath); // Set the file path in the image link field
+        } else {
+            preview.attr('src', '#'); // Reset if no image is available
+            preview.css('display', 'none'); // Hide the preview
+            $('#updated_image_link').val(''); // Clear the image link field
+        }
+
+        // Display the modal
+        $('#updateCategoryModal').modal('show');
+    };
+
 </script>
 
 </body>
