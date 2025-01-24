@@ -1,0 +1,36 @@
+package lk.ijse.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
+public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long productId;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false, length = 500)
+    private String description;
+
+    @Column(nullable = false)
+    private Double price;
+
+    @Column(nullable = false)
+    private Integer stock;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "categoryId")
+    private Category category;
+
+
+    private String imagepath;
+}

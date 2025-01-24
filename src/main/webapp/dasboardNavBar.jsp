@@ -121,17 +121,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="customerDashboard.jsp">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Category
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Men</a></li>
-                        <li><a class="dropdown-item" href="#">Women</a></li>
-                        <li><a class="dropdown-item" href="#">Kids</a></li>
+                        <li><a class="text-dark dropdown-item" href="#">Men</a></li>
+                        <li><a class="text-dark dropdown-item" href="#">Women</a></li>
+                        <li><a class="text-dark dropdown-item" href="#">Kids</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -144,9 +141,10 @@
                         Admin
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Manage Users</a></li>
-                        <li><a class="dropdown-item" href="addProduct.jsp">Manage Products</a></li>
-                        <li><a class="dropdown-item" href="#">Reports</a></li>
+                        <li><a class="text-dark dropdown-item" href="#">Manage Users</a></li>
+                        <li><a class="text-dark dropdown-item" href="allProducts.jsp">Manage Products</a></li>
+                        <li><a class="text-dark dropdown-item" href="category-list">Category</a></li>
+                        <li><a class="text-dark dropdown-item" href="#">Reports</a></li>
                     </ul>
                 </li>
                 <% } %>
@@ -156,13 +154,13 @@
                 <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
             <div class="dropdown">
-                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="text-dark btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <%= userName != null ? userName : "Guest" %>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="text-dark dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a></li>
+                    <li><a class="text-dark dropdown-item" href="#" onclick="confirmLogout()">Logout</a></li>
                 </ul>
             </div>
         </div>

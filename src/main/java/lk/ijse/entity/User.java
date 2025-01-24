@@ -1,12 +1,11 @@
 package lk.ijse.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,4 +19,11 @@ public class User {
     private String email;
     private String password;
     private String role;
+    @Column(nullable = false)
+    private Boolean status = true;
+
+    @OneToMany(mappedBy = "user",  fetch = FetchType.EAGER)
+    private List<Order> orders;
+
+
 }

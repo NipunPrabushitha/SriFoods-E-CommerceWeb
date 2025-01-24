@@ -18,7 +18,9 @@ public class LoginServlet extends HelloServlet{
         HttpSession session = req.getSession();
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        System.out.println(password);
         boolean isExist = userBO.cheackCredintials(email, password);
+        System.out.println(isExist);
         Object[] nameAndRole = userBO.getNameAndRole(email);
 
         if (isExist && nameAndRole != null) {

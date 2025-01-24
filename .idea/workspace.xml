@@ -9,24 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="login and registration done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/ForgotPasswordServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/ResetPasswordServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addProduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/dasboardNavBar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resetPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="done logout,changePassword and admin nav part">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/CategoryBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/CategoryBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/CategoryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/CategoryDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/CategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/SaveCategoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/getAllCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/category.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/CrudBO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/UserBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/UserBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/UserBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/UserBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/BOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/DAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/customerDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customerDashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forgetPassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/loginNavbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/loginNavbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/util/FactoryConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/util/FactoryConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/dasboardNavBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dasboardNavBar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +42,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -174,7 +179,7 @@
       <workItem from="1737518889118" duration="27444000" />
       <workItem from="1737642655877" duration="7589000" />
       <workItem from="1737692135172" duration="2468000" />
-      <workItem from="1737699851020" duration="6801000" />
+      <workItem from="1737699851020" duration="26613000" />
     </task>
     <task id="LOCAL-00001" summary="setup login ui">
       <option name="closed" value="true" />
@@ -208,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737571611093</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="done logout,changePassword and admin nav part">
+      <option name="closed" value="true" />
+      <created>1737706915162</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737706915162</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +232,7 @@
     <MESSAGE value="done registration ui" />
     <MESSAGE value="setup layered architecture and add components" />
     <MESSAGE value="login and registration done" />
-    <option name="LAST_COMMIT_MESSAGE" value="login and registration done" />
+    <MESSAGE value="done logout,changePassword and admin nav part" />
+    <option name="LAST_COMMIT_MESSAGE" value="done logout,changePassword and admin nav part" />
   </component>
 </project>

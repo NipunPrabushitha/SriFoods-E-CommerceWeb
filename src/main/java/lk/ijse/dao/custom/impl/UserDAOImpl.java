@@ -11,14 +11,15 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean cheackCredintials(String email, String password) {
+        Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = null;
-        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+        try {
             // Start transaction
             transaction = session.beginTransaction();
-
+            System.out.println("in the DAO"+password);
             // HQL query to check email and password
             String hql = "FROM User WHERE email = :email AND password = :password";
-            Query query = session.createQuery(hql);
+            Query query = session.createQuery(hql,User.class);
             query.setParameter("email", email);
             query.setParameter("password", password);
 
@@ -50,8 +51,10 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean resetPassword(String email,String password) {
+        Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = null;
-        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+        try {
+
             transaction = session.beginTransaction();
 
             // Fetch the user by email
@@ -81,10 +84,11 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public Object[] getNameAndRole(String email) {
+        Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = null;
         Object[] nameAndRole = null;
 
-        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+        try {
             // Start a transaction
             transaction = session.beginTransaction();
 

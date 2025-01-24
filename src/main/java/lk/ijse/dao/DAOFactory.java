@@ -1,5 +1,6 @@
 package lk.ijse.dao;
 
+import lk.ijse.dao.custom.impl.CategoryDAOImpl;
 import lk.ijse.dao.custom.impl.UserDAOImpl;
 
 public class DAOFactory {
@@ -10,12 +11,14 @@ public class DAOFactory {
         return (daoFactory == null)? daoFactory = new DAOFactory() : daoFactory;
     }
     public enum DAOType {
-        USER
+        USER,CATEGORY
     }
     public SuperDAO getDAO(DAOType types) {
         switch (types){
             case USER:
                 return new UserDAOImpl();
+            case CATEGORY:
+                return new CategoryDAOImpl();
             default:
                 return null;
         }
