@@ -24,4 +24,14 @@ public class UserBOImpl implements UserBO {
         ModelMapper modelMapper = new ModelMapper();
         return userDAO.save(modelMapper.map(userDTO, User.class));
     }
+
+    @Override
+    public boolean resetPassword(String email,String password) {
+        return userDAO.resetPassword(email,password);
+    }
+
+    @Override
+    public Object[] getNameAndRole(String email) {
+        return userDAO.getNameAndRole(email);
+    }
 }

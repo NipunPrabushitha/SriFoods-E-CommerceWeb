@@ -8,7 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>NavBar</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav.navbar {
+            background: linear-gradient(135deg, #003135, #024950);
+        }
+
+        nav.navbar .navbar-brand {
+            color: #ffffff;
+        }
+
+        nav.navbar .btn {
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
 <!-- Navigation Bar -->

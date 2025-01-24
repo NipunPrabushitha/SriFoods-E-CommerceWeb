@@ -100,7 +100,89 @@
 </head>
 <body>
 
+<%@include file="dasboardNavBar.jsp"%>
+<%--
+<%@ page session="true" %>
+<%
+    // Retrieve the user's role from the session
+    String userRole = (String) session.getAttribute("userRole"); // Assuming the role is stored in session
+    String userName = (String) session.getAttribute("userName");
+%>
+
 <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="customerDashboard.jsp">Core Clothing</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Men</a></li>
+                        <li><a class="dropdown-item" href="#">Women</a></li>
+                        <li><a class="dropdown-item" href="#">Kids</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
+                </li>
+                &lt;%&ndash; Conditionally display Admin dropdown if the role is "admin" &ndash;%&gt;
+                <% if ("admin".equals(userRole)) { %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Manage Users</a></li>
+                        <li><a class="dropdown-item" href="#">Manage Products</a></li>
+                        <li><a class="dropdown-item" href="#">Reports</a></li>
+                        <li><a class="dropdown-item" href="#">Reports</a></li>
+                    </ul>
+                </li>
+                <% } %>
+            </ul>
+            <form class="d-flex me-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+            <div class="dropdown">
+                <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= userName != null ? userName : "Guest" %>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- JavaScript for Logout Confirmation -->
+<script>
+    function confirmLogout() {
+        // Show a confirmation dialog
+        const confirmAction = confirm("Are you sure you want to log out?");
+        if (confirmAction) {
+            // Redirect to the logout servlet
+            window.location.href = "logout";
+        }
+    }
+</script>
+--%>
+
+
+
+<%--<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="customerDashboard.jsp">Core Clothing</a>
@@ -142,7 +224,7 @@
             </div>
         </div>
     </div>
-</nav>
+</nav>--%>
 
 
 <!-- Moving Images Carousel -->

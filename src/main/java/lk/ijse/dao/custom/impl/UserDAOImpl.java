@@ -47,4 +47,64 @@ public class UserDAOImpl implements UserDAO {
         session.close();
         return true;
     }
+
+    @Override
+    public boolean resetPassword(String email,String password) {
+        Transaction transaction = null;
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            transaction = session.beginTransaction();
+
+            // Fetch the user by email
+            User user = session.createQuery("FROM User WHERE email = :email", User.class)
+                    .setParameter("email", email)
+                    .uniqueResult();
+
+            if (user != null) {
+                // Update the password
+                user.setPassword(password);
+                session.update(user);
+
+                // Commit the transaction
+                transaction.commit();
+                return true; // Password updated successfully
+            } else {
+                return false; // User not found
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false; // Error occurred
+        }
+    }
+
+    @Override
+    public Object[] getNameAndRole(String email) {
+        Transaction transaction = null;
+        Object[] nameAndRole = null;
+
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            // Start a transaction
+            transaction = session.beginTransaction();
+
+            // HQL query to fetch name and role based on email
+            String hql = "SELECT u.name, u.role FROM User u WHERE u.email = :email";
+            Query<Object[]> query = session.createQuery(hql, Object[].class);
+            query.setParameter("email", email);
+
+            // Fetch the single result (name and role)
+            nameAndRole = query.uniqueResult();
+
+            // Commit the transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+
+        return nameAndRole; // Returns null if no user is found
+    }
 }

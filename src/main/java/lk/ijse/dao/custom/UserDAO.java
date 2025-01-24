@@ -9,4 +9,8 @@ public interface UserDAO extends CrudDAO {
     boolean cheackCredintials(String email, String password);
 
     boolean save(User map);
+
+    boolean resetPassword(String email,String password);
+
+    Object[] getNameAndRole(String email);
 }
