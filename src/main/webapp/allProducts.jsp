@@ -109,7 +109,7 @@
                 </td>
                 <td>
                     <button class="btn btn-warning btn-sm" onclick="editProduct('<%= productDTO.getId() %>', '<%= productDTO.getName() %>', '<%= productDTO.getDescription() %>', '<%= productDTO.getCategory().getCategoryName() %>', '<%= productDTO.getPrice() %>', '<%= productDTO.getStock() %>', '<%= productDTO.getImagePath() %>')">Edit</button>
-                    <a href="deleteCategory-servlet?id=<%= productDTO.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
+                    <a href="deleteProductServlet?id=<%= productDTO.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
                 </td>
 
                 <!-- Update Product Button -->

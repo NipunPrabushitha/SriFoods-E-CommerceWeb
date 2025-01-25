@@ -66,4 +66,19 @@ public class ProductDAOImpl implements ProductDAO {
         session.close();
         return true;
     }
+
+    @Override
+    public boolean delete(String id) {
+        try {
+            Session session = FactoryConfiguration.getInstance().getSession();
+            Transaction transaction = session.beginTransaction();
+            Product product = session.load(Product.class, id);
+            session.delete(product);
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
 }

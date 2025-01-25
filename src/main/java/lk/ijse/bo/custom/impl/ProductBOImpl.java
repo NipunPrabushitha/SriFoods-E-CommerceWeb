@@ -58,4 +58,9 @@ public class ProductBOImpl implements ProductBO {
         return productDAO.update(new Product(productDTO.getId(), productDTO.getName(), productDTO.getDescription(), productDTO.getPrice(), productDTO.getStock(), category, productDTO.getImagePath()));
 
     }
+
+    @Override
+    public boolean deleteProduct(String id) {
+        return productDAO.delete(id);
+    }
 }
