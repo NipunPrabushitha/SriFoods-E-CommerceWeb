@@ -11,6 +11,7 @@ import org.modelmapper.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CategoryBOImpl implements CategoryBO {
     ModelMapper modelMapper = new ModelMapper();
@@ -52,5 +53,11 @@ public class CategoryBOImpl implements CategoryBO {
     @Override
     public boolean deleteCategory(String id) {
         return categoryDAO.delete(id);
+    }
+
+    @Override
+    public CategoryDTO getByID(Long categoryId) {
+         Category category = categoryDAO.getByID(categoryId);
+         return new CategoryDTO(category.getId(), category.getCategoryName(), category.getDescription(), category.getFile());
     }
 }

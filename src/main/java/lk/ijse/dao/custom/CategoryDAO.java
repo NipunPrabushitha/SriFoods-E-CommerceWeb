@@ -14,4 +14,6 @@ public interface CategoryDAO extends SuperDAO {
     boolean update(Category map);
 
     boolean delete(String id);
+
+    Category getByID(Long categoryId);
 }

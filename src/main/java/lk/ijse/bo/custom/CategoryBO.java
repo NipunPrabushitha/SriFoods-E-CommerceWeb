@@ -13,4 +13,6 @@ public interface CategoryBO extends SuperBO {
     boolean updateCategory(CategoryDTO categoryDTO);
 
     boolean deleteCategory(String id);
+
+    CategoryDTO getByID(Long categoryId);
 }
