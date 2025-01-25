@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 @WebServlet(name = "CategoryListServlet", value = "/category-list")
 
-public class GetAllCategory extends HttpServlet {
+public class GetAllCategoryServlet extends HttpServlet {
     private final CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CATEGORY);
 
     @Override

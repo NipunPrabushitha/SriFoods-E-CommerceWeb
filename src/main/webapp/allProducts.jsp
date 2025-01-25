@@ -1,3 +1,5 @@
+<%@ page import="lk.ijse.model.ProductDTO" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -72,6 +74,10 @@
 
     <!-- Products Table -->
     <h2 class="text-white text-center mb-4">Product Catalog</h2>
+    <%
+        List<ProductDTO> dataList = (List<ProductDTO>) request.getAttribute("products");
+        if(dataList != null && !dataList.isEmpty()){
+    %>
     <div class="card p-4">
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -80,44 +86,42 @@
                 <th>Product Name</th>
                 <th>Description</th>
                 <th>Category</th>
+                <th>Stock</th>
                 <th>Price</th>
                 <th>Image Link</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <!-- Example Product 1 -->
+                <%
+                int index = 1; // To display serial numbers
+                for(ProductDTO productDTO : dataList){
+            %>
             <tr>
-                <td>1</td>
-                <td>Smartphone</td>
-                <td>Latest model with 5G support</td>
-                <td>Electronics</td>
-                <td>$999</td>
-                <td><a href="https://example.com/smartphone-image.jpg" target="_blank">View Image</a></td>
+                <td><%= productDTO.getId() %></td>
+                <td><%= productDTO.getName() %></td>
+                <td><%= productDTO.getDescription() %></td>
+                <td><%= productDTO.getCategory().getCategoryName() %></td>
+                <td><%= productDTO.getStock() %></td>
+                <td><%= productDTO.getPrice() %></td>
                 <td>
-                    <!-- Edit Button - Trigger Modal -->
-                    <button class="btn btn-warning btn-sm"
-                            onclick="editProduct(1, 'Smartphone', 'Latest model with 5G support', 'Electronics', '$999', 'https://example.com/smartphone-image.jpg')">Edit</button>
-                    <a href="deleteProduct.jsp?id=1" class="btn btn-danger btn-sm">Delete</a>
+                    <img src="<%= productDTO.getImagePath() %>" alt="<%= productDTO.getImagePath() %>" style="width: 100px; height: auto;">
                 </td>
-            </tr>
-            <!-- Example Product 2 -->
-            <tr>
-                <td>2</td>
-                <td>Leather Jacket</td>
-                <td>Premium quality leather jacket</td>
-                <td>Clothing</td>
-                <td>$199</td>
-                <td><a href="https://example.com/jacket-image.jpg" target="_blank">View Image</a></td>
                 <td>
-                    <!-- Edit Button - Trigger Modal -->
-                    <button class="btn btn-warning btn-sm"
-                            onclick="editProduct(2, 'Leather Jacket', 'Premium quality leather jacket', 'Clothing', '$199', 'https://example.com/jacket-image.jpg')">Edit</button>
-                    <a href="deleteProduct.jsp?id=2" class="btn btn-danger btn-sm">Delete</a>
+                    <button class="btn btn-warning btn-sm" onclick="editProduct('<%= productDTO.getId() %>', '<%= productDTO.getName() %>', '<%= productDTO.getDescription() %>', '<%= productDTO.getCategory().getCategoryName() %>', '<%= productDTO.getPrice() %>', '<%= productDTO.getStock() %>', '<%= productDTO.getImagePath() %>')">Edit</button>
+                    <a href="deleteCategory-servlet?id=<%= productDTO.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
                 </td>
+
+                <!-- Update Product Button -->
             </tr>
-            </tbody>
+                <%
+                }
+            %>
+
         </table>
+        <%
+            }
+        %>
     </div>
 
     <!-- Add New Product Button (again at the bottom) -->
@@ -153,6 +157,17 @@
                         <input type="text" class="form-control" id="updated_price">
                     </div>
                     <div class="mb-3">
+                        <label for="updated_stock" class="form-label">Stock</label>
+                        <input type="text" class="form-control" id="updated_stock">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Image Preview</label>
+                        <div>
+                            <img id="updated_image_preview" src="#" alt="Selected Image"
+                                 style="max-width: 100%; max-height: 200px; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <label for="updated_image_link" class="form-label">Image Link</label>
                         <input type="text" class="form-control" id="updated_image_link">
                     </div>
@@ -168,19 +183,31 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // Function to populate modal with product data and show modal
-    const editProduct = (id, name, description, category, price, imageLink) => {
-        // Setting the modal input values dynamically
+    const editProduct = (id, name, description, category, price, stock, imageLink) => {
+        // Set values in the modal fields
         $('#updated_product_id').val(id);
         $('#updated_name').val(name);
         $('#updated_description').val(description);
         $('#updated_category').val(category);
         $('#updated_price').val(price);
+        $('#updated_stock').val(stock);
         $('#updated_image_link').val(imageLink);
 
-        // Showing the modal
+        // Update the image preview
+        const preview = document.getElementById('updated_image_preview');
+        if (imageLink) {
+            preview.src = imageLink;
+            preview.style.display = 'block'; // Ensure the image is displayed
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none'; // Hide if no image link is provided
+        }
+
+        // Show the modal
         $('#updateProductModal').modal('show');
-    }
+    };
+
+
 </script>
 
 </body>

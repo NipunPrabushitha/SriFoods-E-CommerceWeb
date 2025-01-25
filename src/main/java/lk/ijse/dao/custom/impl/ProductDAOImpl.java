@@ -1,10 +1,13 @@
 package lk.ijse.dao.custom.impl;
 
 import lk.ijse.dao.custom.ProductDAO;
+import lk.ijse.entity.Category;
 import lk.ijse.entity.Product;
 import lk.ijse.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class ProductDAOImpl implements ProductDAO {
 
@@ -36,5 +39,21 @@ public class ProductDAOImpl implements ProductDAO {
         } finally {
             session.close(); // Close the session after use
         }
+    }
+
+    @Override
+    public List<Product> getAll() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        // Create a transaction
+        Transaction transaction = session.beginTransaction();
+
+        // Fetch all categories
+        List<Product> products = session.createQuery("FROM Product", Product.class).list();
+
+        // Commit transaction
+        transaction.commit();
+
+        return products;
     }
 }
