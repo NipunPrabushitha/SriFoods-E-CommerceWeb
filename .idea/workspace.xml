@@ -9,16 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="done Product save">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/GetAllProductServlet.java" afterDir="false" />
+    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="done getAll Product and show dynamically in the ui">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UpdateProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/CategoryBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/CategoryBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/ProductBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/ProductBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/CategoryBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/CategoryBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/ProductBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/ProductBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/CategoryDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/CategoryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/CategoryDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/GetAllCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/GetAllCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/AddProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/updateProductServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dasboardNavBar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/dasboardNavBar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +171,7 @@
       <workItem from="1737642655877" duration="7589000" />
       <workItem from="1737692135172" duration="2468000" />
       <workItem from="1737699851020" duration="39654000" />
-      <workItem from="1737792311502" duration="24239000" />
+      <workItem from="1737792311502" duration="29301000" />
     </task>
     <task id="LOCAL-00001" summary="setup login ui">
       <option name="closed" value="true" />
@@ -241,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737816817545</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="done getAll Product and show dynamically in the ui">
+      <option name="closed" value="true" />
+      <created>1737826945865</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737826945865</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +269,7 @@
     <MESSAGE value="done update category" />
     <MESSAGE value="done category part and add category names in the product ui" />
     <MESSAGE value="done Product save" />
-    <option name="LAST_COMMIT_MESSAGE" value="done Product save" />
+    <MESSAGE value="done getAll Product and show dynamically in the ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="done getAll Product and show dynamically in the ui" />
   </component>
 </project>

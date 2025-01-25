@@ -12,4 +12,6 @@ public interface ProductDAO extends CrudDAO {
     boolean save(Product product);
 
     List<Product> getAll();
+
+    boolean update(Product product);
 }

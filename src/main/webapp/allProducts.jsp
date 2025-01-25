@@ -135,30 +135,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="container m-2">
-                <form>
+                <form action="updateProduct-servlet" method="post">
                     <div class="mb-3">
                         <label for="updated_product_id" class="form-label">Product ID</label>
-                        <input type="text" class="form-control" id="updated_product_id" readonly>
+                        <input type="text" class="form-control" name="product_id" id="updated_product_id" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="updated_name" class="form-label">Product Name</label>
-                        <input type="text" class="form-control" id="updated_name">
+                        <input type="text" class="form-control" name="product_name" id="updated_name">
                     </div>
                     <div class="mb-3">
                         <label for="updated_description" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="updated_description">
+                        <input type="text" class="form-control" name="product_description" id="updated_description">
                     </div>
                     <div class="mb-3">
                         <label for="updated_category" class="form-label">Category</label>
-                        <input type="text" class="form-control" id="updated_category">
+                        <input type="text" class="form-control" name="product_category" id="updated_category">
                     </div>
                     <div class="mb-3">
                         <label for="updated_price" class="form-label">Price</label>
-                        <input type="text" class="form-control" id="updated_price">
+                        <input type="text" class="form-control" name="product_price" id="updated_price">
                     </div>
                     <div class="mb-3">
                         <label for="updated_stock" class="form-label">Stock</label>
-                        <input type="text" class="form-control" id="updated_stock">
+                        <input type="text" class="form-control" name="product_stock" id="updated_stock">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Image Preview</label>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="updated_image_link" class="form-label">Image Link</label>
-                        <input type="text" class="form-control" id="updated_image_link">
+                        <input type="text" class="form-control" name="image_link" id="updated_image_link">
                     </div>
                     <button id="btn_update_product" type="submit" class="btn btn-primary">Update</button>
                 </form>
@@ -207,6 +207,21 @@
         $('#updateProductModal').modal('show');
     };
 
+    // Function to display alert messages
+    const showAlert = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const successMessage = urlParams.get('success');
+        const errorMessage = urlParams.get('error');
+
+        if (successMessage) {
+            alert(successMessage); // Show success message
+        } else if (errorMessage) {
+            alert(errorMessage); // Show error message
+        }
+    };
+
+    // Call the function on page load
+    document.addEventListener("DOMContentLoaded", showAlert);
 
 </script>
 

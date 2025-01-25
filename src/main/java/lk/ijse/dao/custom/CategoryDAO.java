@@ -16,4 +16,6 @@ public interface CategoryDAO extends SuperDAO {
     boolean delete(String id);
 
     Category getByID(Long categoryId);
+
+    Category getByName(String productCategory);
 }

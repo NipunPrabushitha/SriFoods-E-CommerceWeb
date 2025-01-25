@@ -130,11 +130,6 @@ public class AddProductServlet extends HttpServlet {
         int stock = Integer.parseInt(request.getParameter("stock"));
         double basePrice = Double.parseDouble(request.getParameter("basePrice"));
 
-        System.out.println("Nmae "+productName);
-        System.out.println("Description "+description);
-        System.out.println("Price "+basePrice);
-        System.out.println("Stock "+stock);
-        System.out.println("Category Id "+categoryId);
 
         Part imagePart = request.getPart("thumbnail");
         String fileName = imagePart.getSubmittedFileName();

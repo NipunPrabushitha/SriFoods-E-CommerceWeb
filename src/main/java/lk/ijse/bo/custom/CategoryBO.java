@@ -15,4 +15,6 @@ public interface CategoryBO extends SuperBO {
     boolean deleteCategory(String id);
 
     CategoryDTO getByID(Long categoryId);
+
+    CategoryDTO getByName(String productCategory);
 }

@@ -60,4 +60,10 @@ public class CategoryBOImpl implements CategoryBO {
          Category category = categoryDAO.getByID(categoryId);
          return new CategoryDTO(category.getId(), category.getCategoryName(), category.getDescription(), category.getFile());
     }
+
+    @Override
+    public CategoryDTO getByName(String productCategory) {
+        Category category = categoryDAO.getByName(productCategory);
+        return new CategoryDTO(category.getId(), category.getCategoryName(), category.getDescription(), category.getFile());
+    }
 }
