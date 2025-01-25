@@ -2,6 +2,7 @@ package lk.ijse.srifoodsecommerceweb;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.bo.BOFactory;
@@ -11,7 +12,7 @@ import lk.ijse.model.CategoryDTO;
 import java.io.IOException;
 
 @WebServlet("/UpdateCategoryServlet")
-public class UpdateCategoryServlet extends HelloServlet{
+public class UpdateCategoryServlet extends HttpServlet {
     CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CATEGORY);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,10 +25,9 @@ public class UpdateCategoryServlet extends HelloServlet{
         boolean isUpdated = categoryBO.updateCategory(categoryDTO);
 
         if(isUpdated){
-            resp.sendRedirect("category.jsp?success=Category updated successfully");
+            resp.sendRedirect("category-list?success=Category updated successfully");
         }else{
-            resp.sendRedirect("category.jsp?error=Failed to update category");
+            resp.sendRedirect("category-list?error=Failed to update category");
         }
-
     }
 }

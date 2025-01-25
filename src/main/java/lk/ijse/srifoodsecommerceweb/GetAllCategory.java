@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 @WebServlet(name = "CategoryListServlet", value = "/category-list")
 
-public class getAllCategory extends HttpServlet {
+public class GetAllCategory extends HttpServlet {
     private final CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CATEGORY);
 
     @Override
@@ -24,9 +24,9 @@ public class getAllCategory extends HttpServlet {
 
             // Set the categories list as a request attribute
             req.setAttribute("categories", categoryList);
-
             // Forward the request to the JSP for rendering
             req.getRequestDispatcher("category.jsp").forward(req, resp);
+
         } catch (Exception e) {
             e.printStackTrace();
             resp.sendRedirect("category.jsp?error=An error occurred while fetching the categories");

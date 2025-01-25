@@ -48,4 +48,9 @@ public class CategoryBOImpl implements CategoryBO {
     public boolean updateCategory(CategoryDTO categoryDTO) {
         return categoryDAO.update(new Category(categoryDTO.getId(), categoryDTO.getCategoryName(),categoryDTO.getDescription(), categoryDTO.getFilepath()));
     }
+
+    @Override
+    public boolean deleteCategory(String id) {
+        return categoryDAO.delete(id);
+    }
 }

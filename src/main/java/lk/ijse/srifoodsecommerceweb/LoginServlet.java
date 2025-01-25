@@ -2,6 +2,7 @@ package lk.ijse.srifoodsecommerceweb;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -11,7 +12,7 @@ import lk.ijse.bo.custom.UserBO;
 import java.io.IOException;
 
 @WebServlet(name = "loginServlet", value = "/login-servlet")
-public class LoginServlet extends HelloServlet{
+public class LoginServlet extends HttpServlet {
     UserBO userBO  = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

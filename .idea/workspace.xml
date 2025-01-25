@@ -9,14 +9,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="done category save and view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UpdateCategoryServlet.java" afterDir="false" />
+    <list default="true" id="572578c9-8763-4d9b-b33b-9475efea6539" name="Changes" comment="done update category">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/ProductBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/AddProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/DeleteCategoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/GetCategoryNamesServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/BOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/CategoryBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/CategoryBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/CategoryBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/bo/custom/impl/CategoryBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/CategoryDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/CategoryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/dao/custom/impl/CategoryDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/SaveCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/SaveCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UpdateCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UpdateCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UserLoginSaveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/UserLoginSaveServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/getAllCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/srifoodsecommerceweb/GetAllCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/allProducts.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +42,8 @@
       <list>
         <option value="package-info" />
         <option value="Jsp File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -164,7 +178,8 @@
       <workItem from="1737518889118" duration="27444000" />
       <workItem from="1737642655877" duration="7589000" />
       <workItem from="1737692135172" duration="2468000" />
-      <workItem from="1737699851020" duration="34447000" />
+      <workItem from="1737699851020" duration="39654000" />
+      <workItem from="1737792311502" duration="6927000" />
     </task>
     <task id="LOCAL-00001" summary="setup login ui">
       <option name="closed" value="true" />
@@ -214,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737732989304</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="done update category">
+      <option name="closed" value="true" />
+      <created>1737748366548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737748366548</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +250,7 @@
     <MESSAGE value="login and registration done" />
     <MESSAGE value="done logout,changePassword and admin nav part" />
     <MESSAGE value="done category save and view" />
-    <option name="LAST_COMMIT_MESSAGE" value="done category save and view" />
+    <MESSAGE value="done update category" />
+    <option name="LAST_COMMIT_MESSAGE" value="done update category" />
   </component>
 </project>

@@ -63,13 +63,13 @@ public class SaveCategoryServlet extends HttpServlet {
 
             // Redirect based on success or failure
             if (isSaved) {
-                resp.sendRedirect("category.jsp?success=Category saved successfully");
+                resp.sendRedirect("category-list?success=Category saved successfully");
             } else {
-                resp.sendRedirect("category.jsp?error=Failed to save category");
+                resp.sendRedirect("category-list?error=Failed to save category");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect("category.jsp?error=An unexpected error occurred");
+            resp.sendRedirect("category-list?error=An unexpected error occurred");
         }
     }
 }

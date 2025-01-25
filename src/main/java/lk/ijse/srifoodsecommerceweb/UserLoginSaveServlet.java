@@ -22,12 +22,13 @@ public class UserLoginSaveServlet extends HttpServlet {
         String password = req.getParameter("password");
         String confirmPassword = req.getParameter("confirmPassword");
         String role = "customer";
+        boolean status = true;
 
         if (!password.equals(confirmPassword)) {
             resp.sendRedirect("registration.jsp?error=Passwords do not match");
 
         }else {
-            boolean isSaved = userBO.saveCustomer(new UserDTO(id,name, email, password,role));
+            boolean isSaved = userBO.saveCustomer(new UserDTO(id,name, email, password,role,status));
             if (isSaved) {
                 resp.sendRedirect("login.jsp?success=Registration Successful");
             } else {

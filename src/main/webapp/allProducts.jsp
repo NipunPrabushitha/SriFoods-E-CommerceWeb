@@ -122,7 +122,7 @@
 
     <!-- Add New Product Button (again at the bottom) -->
     <div class="text-end mt-4">
-        <a href="addProduct.jsp" class="btn btn-primary">Add New Product</a>
+        <a href="category-names" class="btn btn-primary">Add New Product</a>
     </div>
 </div>
 

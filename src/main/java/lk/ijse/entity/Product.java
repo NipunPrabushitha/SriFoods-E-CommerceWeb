@@ -27,10 +27,9 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "categoryId")
     private Category category;
-
 
     private String imagepath;
 }
