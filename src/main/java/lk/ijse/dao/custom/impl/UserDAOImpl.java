@@ -1,11 +1,15 @@
 package lk.ijse.dao.custom.impl;
 
 import lk.ijse.dao.custom.UserDAO;
+import lk.ijse.entity.Category;
+import lk.ijse.entity.Product;
 import lk.ijse.entity.User;
 import lk.ijse.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
 
@@ -110,5 +114,37 @@ public class UserDAOImpl implements UserDAO {
         }
 
         return nameAndRole; // Returns null if no user is found
+    }
+
+    @Override
+    public boolean updateUserStatus(int userId, boolean status) {
+        try {
+            Session session = FactoryConfiguration.getInstance().getSession();
+            Transaction transaction = session.beginTransaction();
+            User user = session.load(User.class, userId);
+            user.setStatus(status);
+            session.update(user);
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
+    public List<User> getAll() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        // Create a transaction
+        Transaction transaction = session.beginTransaction();
+
+        // Fetch all categories
+        List<User> users = session.createQuery("FROM User", User.class).list();
+
+        // Commit transaction
+        transaction.commit();
+
+        return users;
     }
 }

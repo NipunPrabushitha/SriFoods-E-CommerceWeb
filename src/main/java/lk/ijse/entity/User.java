@@ -25,5 +25,11 @@ public class User {
     @OneToMany(mappedBy = "user",  fetch = FetchType.EAGER)
     private List<Order> orders;
 
+    public Boolean getStatus() {
+        return status;
+    }
 
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 }

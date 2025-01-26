@@ -141,7 +141,7 @@
                         Admin
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="text-dark dropdown-item" href="#">Manage Users</a></li>
+                        <li><a class="text-dark dropdown-item" href="allUsers-Servlet">Manage Users</a></li>
                         <li><a class="text-dark dropdown-item" href="allProducts-servlet">Manage Products</a></li>
                         <li><a class="text-dark dropdown-item" href="category-list">Category</a></li>
                         <li><a class="text-dark dropdown-item" href="#">Reports</a></li>
