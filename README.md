@@ -44,6 +44,6 @@ How to Run
 Video Demonstration
 
 Watch the demo on YouTube: Link to Video
-Repository Link
+Repository Link = https://github.com/NipunPrabushitha/SriFoods-E-CommerceWeb
 
 GitHub Repository
