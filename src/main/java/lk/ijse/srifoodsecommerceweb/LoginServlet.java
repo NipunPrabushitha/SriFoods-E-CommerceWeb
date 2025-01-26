@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userRole", role);
 
             // Redirect to the customer dashboard
-            resp.sendRedirect("customerDashboard.jsp");
+            resp.sendRedirect("allDataInDashboard");
         } else {
             // Redirect to login page with an error message
             resp.sendRedirect("login.jsp?error=Invalid Credentials");

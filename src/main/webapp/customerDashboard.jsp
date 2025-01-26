@@ -1,4 +1,5 @@
-<%--
+<%@ page import="lk.ijse.model.CategoryDTO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: nipun
   Date: 1/22/25
@@ -180,8 +181,6 @@
 </script>
 --%>
 
-
-
 <%--<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container-fluid">
@@ -266,7 +265,14 @@
 <div class="container my-5">
     <h2 class="text-center mb-4 mb-4 text-light fw-bold">Shop by Category</h2>
     <div class="row g-4">
-        <!-- Category Card 1 -->
+       <%-- <!-- Category Card 1 -->
+        <%
+            List<CategoryDTO> dataList = (List<CategoryDTO>) request.getAttribute("categoriesInDashBoard");
+            if(dataList != null && !dataList.isEmpty()){
+        %>
+        <%
+            for(CategoryDTO productDTO : dataList){
+        %>
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="category-card">
                 <img src="images/men-category.jpg" alt="Men Category">
@@ -277,8 +283,47 @@
                 </div>
             </div>
         </div>
-
-        <!-- Category Card 2 -->
+        <%
+            }
+        %>
+        <%
+            }
+        %>--%>
+           <!-- Category Card Section -->
+           <%
+               List<CategoryDTO> dataList = (List<CategoryDTO>) request.getAttribute("categoriesInDashBoard");
+               if (dataList != null && !dataList.isEmpty()) {
+           %>
+           <%
+               for (CategoryDTO categoryDTO : dataList) {
+           %>
+           <div class="col-lg-3 col-md-4 col-sm-6">
+               <div class="category-card">
+                   <!-- Dynamically set image source and alt text -->
+                   <img src="<%= categoryDTO.getFilepath() %>" alt="<%= categoryDTO.getCategoryName() %> Category" class="img-fluid">
+                   <div class="card-body">
+                       <!-- Dynamically set category name -->
+                       <h5 class="card-title"><%= categoryDTO.getCategoryName() %></h5>
+                       <!-- Dynamically set category description -->
+                       <p class="card-text"><%= categoryDTO.getDescription() %></p>
+                       <!-- Dynamically generate a link for each category -->
+                       <a href="shop?categoryId=<%= categoryDTO.getId() %>" class="btn btn-primary">Shop Now</a>
+                   </div>
+               </div>
+           </div>
+           <%
+               }
+           %>
+           <%
+           } else {
+           %>
+           <div class="col-12 text-center">
+               <p class="text-muted">No categories available at the moment.</p>
+           </div>
+           <%
+               }
+           %>
+         <%--  <!-- Category Card 2 -->
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="category-card">
                 <img src="images/women-category.jpg" alt="Women Category">
@@ -312,7 +357,7 @@
                     <a href="#" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </div>
 </div>
 

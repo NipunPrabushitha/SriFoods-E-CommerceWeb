@@ -122,6 +122,7 @@
         <%
             }
         %>
+
     </div>
 
     <!-- Add New Product Button (again at the bottom) -->
